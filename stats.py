@@ -17,8 +17,7 @@ def sorted_list(char_count):
     sort_list = sorted(char_count.items(), key=lambda x: x[1], reverse=True)
     return sort_list
 
-def full_report(word_count, char_count, sort_list):
-    filepath = "books/frankenstein.txt"
+def full_report(word_count, char_count, sort_list, filepath):
     print("============ BOOKBOT ============\n"
               f"Analyzing book found at {filepath}...\n"
               "----------- Word Count ----------\n"
