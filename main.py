@@ -9,14 +9,17 @@ def get_book_text(filepath):
     
 
 def main():
-    print("Usage: python3 main.py <path_to_book>")
     
+    try:
+        filepath = sys.argv[1]
+    except IndexError:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     book_text = get_book_text(filepath)
     get_book_word_count(book_text)
     char_counter(book_text)
     sorted_list(char_counter(book_text))
     full_report(get_book_word_count(book_text), char_counter(book_text), sorted_list(char_counter(book_text)), filepath)
-    sys.exit(1)
-filepath = sys.argv[1]
+    
 main()
 
